@@ -1,0 +1,19 @@
+<h2>Add an order</h2>
+
+<label for="description">Description:</label>
+<input type="text" id="description" [(ngModel)]="formOrder.description" />
+<br />
+
+<label for="restaurant">Restaurant:</label>
+<input type="text" id="restaurant" [(ngModel)]="formOrder.restaurant" />
+<br />
+
+<label for="rating">Rating:</label>
+<input type="number" id="rating" min="1" max="5" [(ngModel)]="formOrder.rating" />
+<br />
+
+<label for="orderAgain">Order Again?:</label>
+<input type="checkbox" id="orderAgain" [(ngModel)]="formOrder.orderAgain" value="true" />
+<br />
+
+<button (click)="emitSubmit()">Submit</button>

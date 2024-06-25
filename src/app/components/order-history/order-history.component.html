@@ -1,0 +1,28 @@
+<h1>Restaurant Faves</h1>
+
+<table>
+    <tr>
+        <th>Description</th>
+        <th>Restaurant</th>
+        <th>Rating</th>
+        <th>Order Again?</th>
+        <th></th>
+    </tr>
+    @for(o of allOrders; track o.id){
+        <tr>
+            <td>{{ o.description }}</td>
+            <td>{{ o.restaurant }}</td>
+            <td>{{ o.rating }}</td>
+            @if(o.orderAgain){
+                <td>✓</td>
+            }
+            @else {
+                <td></td>
+            }
+        </tr>
+        <td><button type="button" (click)="deleteOrder(o)">Delete</button></td>
+    }
+    
+</table>
+
+<app-add-order-form (Submitted)="addOrder($event)"></app-add-order-form>
